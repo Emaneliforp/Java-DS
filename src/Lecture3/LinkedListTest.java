@@ -26,9 +26,11 @@ public class LinkedListTest {
     public void testPrepend(){
         LinkedList recipe1 = new LinkedList();
         Node n1 = new Node("rice");
+        Node n2 = new Node("chicken");
+        Node n3 = new Node("chili");
         recipe1.prepend(n1);
-        assertEquals(1, recipe1.size);
-        assertEquals("rice", recipe1.head.value);
+        recipe1.prepend(n2);
+        recipe1.prepend(n3);
     }
     @Test
     public void testGetOneItem(){
@@ -65,8 +67,6 @@ public class LinkedListTest {
         recipe1.prepend(n2);
         recipe1.prepend(n3);
         recipe1.remove();
-        assertEquals(2, recipe1.size);
-        assertEquals("chicken", recipe1.get(0));
     }
     @Test
     public void testRemoveEmpty(){
